@@ -9,14 +9,22 @@
     <script type="module" crossorigin src="/vanilla-app-template/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-9dabe76c.js">
     <link rel="stylesheet" href="/vanilla-app-template/assets/vendor-4b066c51.css">
-    <link rel="stylesheet" href="/vanilla-app-template/assets/index-10c40100.css">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/index-56d60145.css">
   </head>
   <body>
 
     <section>
-      <h1>Example page title</h1>
-     
+      <h1 hidden>Search PhotoCard</h1>
     </section>
+
+
+    <form type="submit" class="search__form js__search-form">
+      <div class="form__box">
+        <input type="text" name="picture" class="input__form-text" placeholder="Введіть назву картинки:" autocomplete="off" />
+        <button type="button" class="button__form-btn">Search</button>
+      </div>
+
+    </form>
 
 
     
