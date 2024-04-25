@@ -10,9 +10,17 @@
   <body>
 
     <section>
-      <h1>Example page title</h1>
-     
+      <h1 hidden>Search PhotoCard</h1>
     </section>
+
+
+    <form type="submit" class="search__form js__search-form">
+      <div class="form__box">
+        <input type="text" name="picture" class="input__form-text" placeholder="Введіть назву картинки:" autocomplete="off" />
+        <button type="button" class="button__form-btn">Search</button>
+      </div>
+
+    </form>
 
 
     <script type="module" src="./js/pixabay-api.js"></script>

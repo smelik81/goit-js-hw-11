@@ -1,0 +1,27 @@
+.form__box {
+    width: 371px;
+    display: flex;
+    gap: 8px;
+}
+
+.input__form-text {
+    width: 272px;
+    border-radius: 4px;
+    border: 1px solid rgb(128, 128, 128);
+    padding: 8px 0px 8px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.button__form-btn {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 117, 255);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+}
+
