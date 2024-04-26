@@ -2,6 +2,7 @@
     width: 371px;
     display: flex;
     gap: 8px;
+    margin: 38px auto;
 }
 
 .input__form-text {
