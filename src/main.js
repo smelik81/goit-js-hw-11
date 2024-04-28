@@ -51,13 +51,14 @@ function onHandleSubmit(event) {
                     timeout: 3000,
                 })
             } else {
+              loader.classList.add('hide');
                 setTimeout(() => {
                     list.insertAdjacentHTML(
                       'beforeend',
                       createMarkup(data.hits)
                     );
-                    lightbox.refresh();
-                    loader.classList.add('hide');
+                  lightbox.refresh();
+                  
                 }, 1000)
             }
         })

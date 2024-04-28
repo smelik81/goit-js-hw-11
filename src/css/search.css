@@ -40,6 +40,11 @@
     height: auto;
 }
 
+.gallery-img {
+  width: 100%;
+  height: 200px;
+}
+
 .gallery-block {
     display: flex;
     flex-direction: row;
@@ -62,6 +67,10 @@
     font-size: 16px;
     line-height: 1.33;
 }
+
+.hide {
+  visibility: hidden;
+} 
 
 .loader {
   width: 48px;
