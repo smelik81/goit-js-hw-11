@@ -19,23 +19,22 @@ const formSearch = document.querySelector('.js__search-form');
 const list = document.querySelector('.js__list');
 const loader = document.querySelector('.hide');
 
-
-
 formSearch.addEventListener('submit', onHandleSubmit);
 function onHandleSubmit(event) {
     event.preventDefault();
     const { picture } = event.currentTarget.elements;
     const searchStr = picture.value.trim();
-    loader.classList.remove('hide');
+   loader.classList.remove('hide');
     list.innerHTML = "";
     if (!searchStr) {
         iziToast.error({
             title: 'Error',
             message: 'Please enter details'
         })
+      loader.classList.add('hide');
         return;
     }
-    
+   
     searchPhoto(picture.value)
     
         .then(data => {
@@ -51,7 +50,7 @@ function onHandleSubmit(event) {
                     timeout: 3000,
                 })
             } else {
-              loader.classList.add('hide');
+              
                 setTimeout(() => {
                     list.insertAdjacentHTML(
                       'beforeend',
@@ -60,7 +59,8 @@ function onHandleSubmit(event) {
                   lightbox.refresh();
                   
                 }, 1000)
-            }
+          }
+         
         })
       
         .catch(error => {
@@ -74,10 +74,13 @@ function onHandleSubmit(event) {
             messageColor: 'white',
             timeout: 3000,
           });
-            loader.classList.add('hide')
+            loader.classList.add('hide');
       })
-        .finally(() => formSearch.reset())
-    
+      .finally(() => {
+        loader.classList.add('hide');  
+        formSearch.reset();
+        })
+  
 };
 
 

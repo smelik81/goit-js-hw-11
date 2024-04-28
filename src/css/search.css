@@ -69,10 +69,11 @@
 }
 
 .hide {
-  visibility: hidden;
+  display: none;
+  text-align: center;
 } 
-
-.loader {
+ 
+/* .loader {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -124,5 +125,5 @@
   100% {
     transform: rotate(-360deg);
   }
-}
+} */
     
