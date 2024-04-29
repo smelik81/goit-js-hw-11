@@ -17,7 +17,7 @@ let lightbox = new SimpleLightbox('.gallery a', {
 
 const formSearch = document.querySelector('.js__search-form');
 const list = document.querySelector('.js__list');
-const loader = document.querySelector('.hide');
+const loader = document.querySelector('.loader');
 
 formSearch.addEventListener('submit', onHandleSubmit);
 function onHandleSubmit(event) {
@@ -36,35 +36,29 @@ function onHandleSubmit(event) {
     }
    
     searchPhoto(picture.value)
-    
         .then(data => {
-            if (!data.hits.length) {
-                
-                iziToast.error({
-                    title: 'Error',
-                    message:
-                        'Sorry, there are no images matching your search query. Please try again!',
-                    position: 'bottomCenter',
-                    transitionIn: 'bounceInUp',
-                    messageColor: 'white',
-                    timeout: 3000,
-                })
-            } else {
-              
-                setTimeout(() => {
-                    list.insertAdjacentHTML(
-                      'beforeend',
-                      createMarkup(data.hits)
-                    );
-                  lightbox.refresh();
-                  
-                }, 1000)
+          if (!data.hits.length) {  
+            iziToast.error({
+              title: 'Error',
+              message:
+                'Sorry, there are no images matching your search query. Please try again!',
+              position: 'bottomCenter',
+              transitionIn: 'bounceInUp',
+              messageColor: 'white',
+              timeout: 5000,
+            })
+          } else {
+            setTimeout(() => {
+              list.insertAdjacentHTML(
+                'beforeend',
+                createMarkup(data.hits)
+              );
+              lightbox.refresh();
+            }, 1000)
           }
-         
         })
       
         .catch(error => {
-           
           iziToast.error({
             title: 'Error',
             message:
@@ -72,7 +66,7 @@ function onHandleSubmit(event) {
             position: 'bottomCenter',
             transitionIn: 'bounceInUp',
             messageColor: 'white',
-            timeout: 3000,
+            timeout: 2000,
           });
             loader.classList.add('hide');
       })
