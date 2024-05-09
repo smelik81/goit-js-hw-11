@@ -17,15 +17,16 @@ let lightbox = new SimpleLightbox('.gallery a', {
 
 const formSearch = document.querySelector('.js__search-form');
 const list = document.querySelector('.js__list');
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.js__loader');
 
 formSearch.addEventListener('submit', onHandleSubmit);
 function onHandleSubmit(event) {
     event.preventDefault();
     const { picture } = event.currentTarget.elements;
     const searchStr = picture.value.trim();
-   loader.classList.remove('hide');
     list.innerHTML = "";
+    loader.classList.remove('hide');
+  
     if (!searchStr) {
         iziToast.error({
             title: 'Error',
@@ -47,7 +48,8 @@ function onHandleSubmit(event) {
               messageColor: 'white',
               timeout: 5000,
             })
-          } else {
+          } 
+          else {
             setTimeout(() => {
               list.insertAdjacentHTML(
                 'beforeend',
